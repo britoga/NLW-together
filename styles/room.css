@@ -1,0 +1,159 @@
+.content{
+    max-width: min(112rem, 90%); /* o MIN define que a tela vai abrir em 112rem e pode chegar abrir até 90% do maximo da tela dependendo do dispositivo */ 
+}
+
+#room header{
+    width: 100%;
+
+    align-items: center;
+    display: flex; 
+    justify-content: space-between; /* Distanciamento entre dois elementos na mesma linha */ 
+    
+}
+
+#room header .buttons{
+    display: flex; /* Alinhando na mesma linha */
+}
+
+
+#room header .buttons .button:nth-child(1){
+    margin-right: 0.8rem; /* Distanciamento entre os dois botões */
+    padding: 1.3rem 1.6rem; /* Tamanho de espaços dentro do botão e o conteudo dentro do botão que no caso é #323243 o 1.3rem é para cabeçalho e  rodapé e p 1.6rem é para os lados*/ 
+}
+
+#room header .buttons .button:nth-child(1) img{ /* Css somente para a imagem */ 
+    margin-left: 1rem; /* Espaço entre a imagem e o texto*/  
+    width: 2rem; /* Tamanho largura */ 
+    height: 2rem; /* Tamanho altura */ 
+}
+
+#room header .buttons .button:nth-child(2){
+    padding: 1.3rem 3.2rem; /* Tamanho de espaços dentro do botão e o conteudo dentro do botão que no caso é Criar sala o 1.3rem é para cabeçalho e  rodapé e p 3.2rem é para os lados*/
+} 
+
+#room header .buttons .button:nth-child(2) img{
+    width: 2rem; /* Tamanho largura */ 
+    height: 2rem; /* Tamanho altura */ 
+}
+
+#question-form h2{
+    font-family: 'Poppins', sans-serif; /* Tipo de estilo da fonte*/ 
+    font-size: 2.8rem; /* Tamanho da fonte */
+    color: var(--black); /* Cor da fonte */ 
+    font-weight: 700rem ; /* Expessura negrito */ 
+    line-height: 4.2rem; /* Altura da sua linha em questão de tamanho que ela ocupa*/ 
+
+    margin-bottom: 2.4rem; /* Espaçamento que vai dar entre os elementos */ 
+}
+
+#question-form form{
+    border: 0.2rem solid var(--grey-blue); /* Cor da borda e expessura, cor é adicionada somente após adicionarmos o SOLID*/ 
+    padding: 1.6rem; /* Tamanho de espaços dentre a borda, praticamente como se fosse uma borda dentro da borda, porém transparente */ 
+    border-radius: 0rem 0.8rem 0.8rem 0.8rem ; /* Uma para cada extremidade, como a borda superior da esquerda tinha que ser quadrada, colocamos apenas um 0rem para iniciar quadrada */ 
+
+    margin-bottom: 2.4rem;
+}
+
+#question-form form textarea {
+    resize: none; /* Usado para eu não poder aumentar seu tamanho, descomentar e testar caso esqueça */ 
+    background: none; /* Deixar fundo do textarea transparente */ 
+
+    width: 100%; /* Deixar o tamanho igual o da borda para ficar acessivel e visivelmente bonito*/
+
+    outline: none; /* Tirar a borda natural da textarea quando deixamos o mouse encima */ 
+}
+
+#question-form form textarea::placeholder{ /* Definindo a cor do placeholder*/
+    color: var(--grey-blue); /* Cor */ 
+}
+
+#question-form form footer{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; /* Distanciamento entre dois itens*/ 
+}
+
+#question-form form footer > div{ /* O > é colocado para mexermos apenas em tags filhas e não netas*/ 
+    display: flex;
+    align-items: center;
+    color: var(--icons-details); /* Cor letra */
+    font-family: 'Poppins', sans-serif; /* Tipo de estilo da fonte*/ 
+    font-weight: 400; /* Espessura em negrito*/
+    font-size: 1.4rem; /* Tamanho da fonte*/  
+}
+
+#question-form form footer > div img{
+    margin-right: 0.9rem; /*Distanciamento entre o cadeado e o texto */ 
+}
+
+#question-form form footer button{
+    height: auto;  /* Altura definido automatico para melhor acessibilidade de dispositivos diferentes*/ 
+    padding: 0.8rem 2.4rem; /* Espacamento entre letra e botão 08rem encima,abaixo e 2.4rem aos lados*/
+    line-height: 2.4rem;  /* Altura padrão do botão */
+}
+
+/* Questions */ 
+
+.question-wrapper{
+    background: var(--light-blue);
+    margin-bottom: 0.8rem;
+    border-radius: 0 0.8rem 0.8rem 0.8rem;
+    padding: 2.4rem;
+}
+
+.question-wrapper .question-content{
+    display: flex;
+    align-items: flex-start;
+}
+
+.question-wrapper .question-content .user{ /* Fazendo o contorno nos avatars */ 
+   background: var(--blue);
+   clip-path: circle();
+   padding: 1.4rem;
+}
+
+.question-wrapper .question-content p{
+    margin-left: 1.6rem;
+    word-break: break-word; /* Isso faz com que quebre palavras para se encaixar no tamanho do layout*/ 
+    display: flex;
+    align-items: center;
+    min-height: 5.2rem; /* Alinhamento do texto com a imagem do avatar, fizemos isso aumentanto o tamanho da area e definimos acima para ela se alinhar ao centro dessa area de 5.5rem que definimos olhando o tamanho do avatar*/
+}
+
+.question-wrapper .actions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* o flex-end coloca os itens ao canto direito */ 
+}
+
+.question-wrapper .actions > a{
+    display: flex;
+    align-items: center;
+}
+
+.question-wrapper .actions > a > img{
+    margin-right: 0.8rem;
+}
+
+/* Alinhar imagens com textos */ 
+.question-wrapper .actions > a + a{ /* O > é colocado para pegarmos somente as tags A filhas do ID actions e o + significa que vamos aplicar as alterações somente no irmão de A */ 
+    /* O a + a foi usado para remover a margem desnecessária que estava sendo usada antes do "Marcar como não lida, já que vamos usar somente em excluir removemos ela aplixando somente no irmão de a com o A + A"*/ 
+    margin-left: 2.4rem;
+}
+
+
+
+.question-wrapper.read{
+    background: var(--grey-medium);
+}
+
+.question-wrapper.read .question-content .user{
+    background: var(--grey-blue);
+}
+
+/* Apagar depois */
+body{
+    background: gray;
+}
+
+

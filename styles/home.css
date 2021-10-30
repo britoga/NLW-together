@@ -1,0 +1,125 @@
+/* Agora vamos fazer o css da home.html*/
+
+.content{
+
+        display: grid;
+        
+        grid-template-columns: 60% 40%; /* Esta separando em partes, de um lado uma coluna de 60% do tamanho e do outro uma coluna de 40%*/
+        
+        grid-template-rows: 11.4rem 1fr; /* Dividindo a tela em duas linhas, a primeira em 114 pixels transformados em REMs e a segunda é 1 fração do que sobrou de espaço*/
+        
+        grid-template-areas: /* Usado para linkar o html com o css e aplicar a formatação do css */
+        
+        'header header'
+        
+        'left right';
+    
+    }
+    
+    header {
+    
+        grid-area: header; /* Aqui fomos lá em html buscar o header para ser formatado em grid-template-areas*/
+    
+    }
+    
+    #bg{ /* Imagem */
+    
+        grid-area: left;
+        
+        background: url('/assets/home-bg-img.svg') no-repeat top/contain; /* top/contain é para forçar a imagem a ficar do tamanho ideal para o seu espaço */
+        background-position: -10rem; /* Estamos movendo a imagem para o lado esquerdo, deixando ela cortada pois é assim que o projeto pede, negativo move para a esquerda e positivo para a direita*/ 
+        
+    }
+    
+    main{ /*Conteudo */
+    
+        grid-area: right;
+        
+        display: flex; /* Faz ter uma sequencia dentro do conteudo */
+        
+        align-items: center; /* Alinhando o conteudo ao centro do seu espaço */
+
+        margin-top: -12rem;
+    
+    }
+    
+    main .container{
+    
+        width: min(36.3rem, 100%); /* Isso garante que o tamanho dos elementos nunca passe de 100% da tela, sendo assim... não tem quebra de pagina */
+    
+    }
+    
+    main h2{
+    
+        font-family: 'Poppins', sans-serif; /* Fonte */
+        
+        color: var(--black); /* Cor */
+        
+        font-size: clamp(20px, 5vw, 2.8rem); /* O clamp determina um intervalo entre tamanhos, aonde o valor maximo pode ser 2.8rem e o menor 20px e ele tem um entretanto, não pode ser menor que 5vw menor que a classe*/
+        
+        margin-bottom: 2.4rem; /* Espacamento entre h2 e botões */
+    
+    }
+    
+    input{
+    
+        border: 0.2rem solid var(--grey-blue); /* Borda */
+        
+        padding: 0 1.6rem; /* Largura da borda*/
+        margin-bottom: 1rem; /* Distanciamento entre botões */ 
+    }
+
+    input, button, .button{
+        width: 100%; /* Pode usar 100% do espaço determinado em grid  */
+        margin-bottom: 1.8rem; /* Tamanho da lagura dos botões e entrada de dados */ 
+    }
+    
+    .separator{
+        display: flex; /* Alinhar elementos  */ 
+        align-items: center; /* Centralizar */ 
+
+        margin: 4rem 0; /* declarando margem para a div e classe separator, quanto maior o numero... maior o espaçamento */ 
+    }
+
+    .separator div:nth-child(2){
+        color: var(--grey-blue);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        padding: 0 1.35rem; /* Espaçamento entre as DIVs */ 
+        line-height: 0; /* Altura da linha, deixando maior o espacamento quanto maior o numero */ 
+
+    }
+
+    .separator div:nth-child(1),
+    .separator div:nth-child(3){
+        background: var(--grey-blue);
+        width: 100%; /* Declara o quanto ela pode consumir do seu espaço */ 
+        height: 1px; /* Altura da linha, deixa ela mais "gordinha" quanto maior o numero de px */
+    }
+
+    /* Vamos usar uma classe chamado ball para poder definir todos os seus parametros e depois usar ela em top e bottom */ 
+
+    .ball{  /* Definindo as propriedades principais do ball para aplicar em outros lugares quando necessários */ 
+        width: 21.2rem;
+        height: 21.2rem;
+        background: var(--blue);
+        clip-path: circle(); /* Aqui define sua forma geometrica*/
+        opacity: 0.1;
+        
+        position: fixed; /* Isso define que ele sempre vai ser fixo no local definido, mesmo que a pagina seja recarregada*/ 
+    }
+
+    .ball.top{      /* Apenas movimentação da bola do topo dentro da tela*/ 
+        top: -46rem; /* De cima para baixo */
+        width: 63.3rem;  /* Largura do elemento */ 
+        right: -35rem;  /* Mexe lateralmente */ 
+        height: 63.3rem; /* Altura do elemento */ 
+    }
+    
+    
+    .ball.bottom{ /* Apenas movimentação da bola de baixo dentro da tela*/ 
+        bottom: -15rem;   /* Mexe de cima para baixo*/ 
+        right: 5.6rem;    /* Mexe lateralmente */   
+    }
+
+

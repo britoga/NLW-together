@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rocket.Q - Perguntas e respostas </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/room.css">
+        <link rel="stylesheet" href="./styles/modal.css">
+
+        <!--  FONTS   -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        
+        <div id="room" class="content">
+            <!--Header sera o topo da nossa pagina -->
+            <header>
+                <a href="#">
+                    <img src="assets/logo.svg" alt="Rocket.Q Logo"/>
+                </a>
+                <div class="buttons">
+                     <div class="button outlined">
+                         #323243
+                         <img src="/assets/copy.svg" alt="Copiar numero">
+                     </div>
+                     <a href="#" class="button">
+                         <img src="/assets/users-white.svg" alt="Criar sala">
+                         Criar sala
+                     </a>
+                </div>
+            </header>
+
+            <main>
+                <section id="question-form">
+                    <h2>Faça sua pergunta</h2>
+                    <form action="">
+                        <label class="sr-only" for-id="question">O que você quer perguntar?</label> <!--Por acessibilidade-->
+                        <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea> <!--Area de digitação para o usuário, o placeholder é o que vai aparecer para o usuário antes de digitar algo-->
+                        
+                        <footer> <!--Rodapé dentro dessa section-->
+                            <div>
+                                <img src="/assets/lock.svg">
+                                Esta pergunta é anônima
+                            </div>
+                            <button>Enviar</button>
+                        </footer>
+                    
+                    </form>
+                </section>
+
+                <section id="questions">
+                    <h2 class="sr-only">Perguntas da comunidade</h2> <!--A classe sr-only vai ocultar tudo, deixando apenas para os motores de busca achar-->
+                    <div class="questions">
+
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg">
+                                </div>
+                                <div class="question">
+                                    <p>Qual a diferença entre const, var e let no JS</p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="check">
+                                    <img src="/assets/check.svg" alt="Marcar como lida">
+                                    Marcar como lida
+                                </a>
+                                <a href="#" class="delete">
+                                    <img src="/assets/trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg">
+                                </div>
+                                <div class="question">
+                                    <p>O que é JS?</p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="check">
+                                    <img src="/assets/check.svg" alt="Marcar como lida">
+                                    Marcar como lida
+                                </a>
+                                <a href="#" class="delete">
+                                    <img src="/assets/trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg">
+                                </div>
+                                <div class="question">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="check">
+                                    <img src="/assets/check.svg" alt="Marcar como lida">
+                                    Marcar como lida
+                                </a>
+                                <a href="#" class="delete">
+                                    <img src="/assets/trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrapper read">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg">
+                                </div>
+                                <div class="question">
+                                    <p>O que é TypeScript?</p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                               
+                                <a href="#" class="delete">
+                                    <img src="/assets/trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+            </main>
+        </div>   
+        
+        <!--MODAL-->
+        <div class="modal-wrapper">
+            <div class="modal">
+                <h2>Excluir</h2>
+                <p>Tem certeza que você deseja excluir esta pergunta?</p>
+
+                <form action="#">
+                    <label class="sr-only" for-id="password">Digite sua senha Admin</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha"/>
+
+                    <div class="buttons">
+                        <div class="button gray">Cancelar</div>
+                        <button class="red">Sim, excluir</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+</html>

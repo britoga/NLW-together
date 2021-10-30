@@ -1,0 +1,192 @@
+*{ /* aqui vai ser usado para sempre zerar a pagina de css ao seu carregamento */
+
+    margin: 0;
+    
+    padding: 0;
+    
+    border: none;
+    
+    text-decoration: none;
+    
+    box-sizing: border-box;
+    
+    }
+    
+    html{
+    
+        /* o --NOME é utilizado para criar variavel dentro do css, depois é só chamarmos a variavel quando precisarmos */
+        
+        --black: #0D114F;
+        
+        --white: #FAFAFA;
+        
+        --red:   #E83F5B;
+        
+        --light-blue: #E0ECFF;
+        
+        --blue:     #3485FF;
+        
+        --background: #FBFCFF;
+        
+        --overlay: #040911;
+        
+        --icons-details: #A5B0C1;
+        
+        --grey-dark: #4D5E77;
+        
+        --grey-blue: #A1B2CD;
+        
+        --grey-light: #E5EAF1;
+        
+        --grey-medium: #eaecf2;
+        
+        /* Sempre iremos trabalhar com sites responsivos, então a medida de tamanho utilizada, vai ser REM ao invez de pixel */
+        
+        /* 1rem = 16px por por padrão, para ficar mais facil a conversão, faremos o padrão virar 10px */
+        
+        font-size: 62.5%;
+    
+    }
+    
+    body{
+    
+        height: 100vh; /*  usado para mostrar que vai ser utilizado 100% da altura da tela, já que não vamos ter uma tela de rolagem para baixo  */
+        
+        /*width: 100vw;  --- O mesmo se aplica se fossemos usar 100% da largura, caso não tivesse mais REMs do lado */
+        display: flex;
+        background: var(--background);
+        
+    }
+    
+    /* Outro reset, porem no body, button, input e textarea*/
+    
+    body, button, input, textarea{
+    
+        font-size: clamp(14px, 1.6rem, 2vw); /* O clamp é utilizado para sites responsivos, aonde mesmo se eu aumentar ou diminuir a tela, ele tenha seu padrão de maior e menores fonts (FONTE MINIMA, FONTE PADRÃO, FONTE MAXIMA) Esse seria o padrão que temos que setar*/
+        
+        font-family: 'Open Sans', sans-serif; /* Após colocarmos o seu link no html, definimos a fonte a ser usada aqui */
+        
+        /*font-family: 'Poppins', sans-serif;   ---  Pode ser que vamos usar em algum codigo*/
+    
+    }
+    
+    .content{
+    
+        width: 100%; /* Indicando que será usado 100% da largura */
+        
+        margin: 0 auto; /* Indicando que a margem vai ser automatica, vai ser ajustado de acordo com a necessidade */
+        
+    }
+    
+    .sr-only{
+    
+        position: absolute; /* Isso vai fazer com que a classe seja absoluta, não respeitando qualquer div, fazendo com que ela se sobreponha a tudo*/
+        
+        height: 1px; /* Tamanho em altura */
+        
+        width: 1px; /* Tamanho em largura */
+        
+        padding: 0; /* Faz com que seja "jogado para o topo do codigo, que no caso do padding 0 é o lado esquerdo no topo" */
+        
+        margin: -1px; /* Como o codigo tem 1px, quando colocamos -1px ele vai ser jogado para fora da tela aonde é apresentado o codigo*/
+        
+        overflow: hidden; /* o Hidden é para não ter barra de rolagem*/
+        
+        clip-path: rect(0, 0, 0, 0); /* Zera todas as configurações de formatação e depois o margin vem e coloca para fora da tela nesse caso*/
+        
+        white-space: nowrap; /* */
+        
+        border-width: 0; /* Remover a borda */
+
+       
+        
+    }
+    
+    /* Input and buttons*/
+    
+    input, button, .button {
+    
+        border-radius: 0.8rem;  /* Arredondamento de bordas*/
+        
+        height: 5rem; /* Altura */
+    
+    }
+    
+    button, .button{
+        
+        font-family: 'Poppins', sans-serif; /* Fonte */
+        
+        font-weight: 500; /* Não sei */
+        
+        line-height: 0; /* Não sei */
+        
+        display: flex; /* sequencia de elementos*/
+        
+        align-items: center; /* Alinhamento de itens */
+        
+        justify-content: center; /* Alinhamento de elementos*/
+        
+        background: var(--blue);
+        
+        color: var(--white);
+        
+        transition: filter 0.4s; /* Tempo para ter transição com o brightness */
+        
+        cursor: pointer; /* Para assim que o cursor estiver encima de um botão, ter um cursor clicavel */
+    
+    }
+    
+    button:hover, .button:hover{
+    
+        filter: brightness(1.2); /* Destaque ao passar encima de um botão */
+    
+    }
+    
+    button > img,
+    
+    .button > img{
+    
+        margin-right: 1rem; /* Distanciamento dentro de botões entre imagem e texto */
+        
+        width: 2rem; /* Largura da imagem */
+    
+    }
+    
+    button.outlined,
+    
+    .button.outlined{
+    
+        background: var(--white); /* Cor do botão criar sala*/
+        
+        color: var(--blue); /* Cor, texto */
+        
+        border: 0.2rem solid var(--blue); /* Margem do botão */
+    
+    }
+    
+    button.red,
+    .button.red{
+        background: var(--red);
+        color: var(--white);
+    }
+
+    button.gray.button,
+    .button.gray{
+        background: var(--grey-light);
+        color: var(--grey-dark);
+    }
+
+    /* HEADER */ 
+    .content header{
+    
+        width: 80%; /* move o header de acordo com sua posição, se colocarmos 100% ele vai ter inicio no canto esquerdo e mudarmos a porcentagem ele vai se movendo */
+        
+        margin: 3.5rem auto; /* Define o ponto de partida de acordo com a margem, se mudarmos vamos perceber que ele se mexe para baixo*/
+    
+    }
+    
+    .content header img{
+    
+        width: 16.7rem; /* Tamanho da imagem do header */
+    
+    }
